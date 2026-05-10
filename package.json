@@ -1,0 +1,92 @@
+{
+  "name": "typst-wrap",
+  "displayName": "Typst Wrapper",
+  "description": "Wrap selected Typst code with common functions and user-defined functions via right-click menu",
+  "version": "1.0.0",
+  "publisher": "your-publisher",
+  "engines": {
+    "vscode": "^1.85.0"
+  },
+  "categories": [
+    "Other"
+  ],
+  "activationEvents": [
+    "onLanguage:typst"
+  ],
+  "main": "./extension.js",
+  "contributes": {
+    "submenus": [
+      {
+        "id": "typst-wrap.submenu",
+        "label": "Typst Wrapper"
+      }
+    ],
+    "commands": [
+      { "command": "typst-wrap.strong",         "title": "#strong (Bold)" },
+      { "command": "typst-wrap.emph",           "title": "#emph (Italic)" },
+      { "command": "typst-wrap.lower",          "title": "#lower (Lowercase)" },
+      { "command": "typst-wrap.upper",          "title": "#upper (Uppercase)" },
+      { "command": "typst-wrap.raw",            "title": "#raw (Code)" },
+      { "command": "typst-wrap.highlight",      "title": "#highlight" },
+      { "command": "typst-wrap.underline",      "title": "#underline" },
+      { "command": "typst-wrap.strike",         "title": "#strike" },
+      { "command": "typst-wrap.overline",       "title": "#overline" },
+      { "command": "typst-wrap.sub",            "title": "#sub (Subscript)" },
+      { "command": "typst-wrap.super",          "title": "#super (Superscript)" },
+      { "command": "typst-wrap.smallcaps",      "title": "#smallcaps" },
+      { "command": "typst-wrap.textRed",        "title": "#text(fill: red)" },
+      { "command": "typst-wrap.textBlue",       "title": "#text(fill: blue)" },
+      { "command": "typst-wrap.alignCenter",    "title": "#align(center)" },
+      { "command": "typst-wrap.alignLeft",      "title": "#align(left)" },
+      { "command": "typst-wrap.alignRight",     "title": "#align(right)" },
+      { "command": "typst-wrap.box",            "title": "#box" },
+      { "command": "typst-wrap.block",          "title": "#block" },
+      { "command": "typst-wrap.rect",           "title": "#rect" },
+      { "command": "typst-wrap.rectDashed",     "title": "#rect (dashed)" },
+      { "command": "typst-wrap.pad",            "title": "#pad" },
+      { "command": "typst-wrap.columns",        "title": "#columns(2)" },
+      { "command": "typst-wrap.link",           "title": "#link" },
+      { "command": "typst-wrap.footnote",       "title": "#footnote" },
+      { "command": "typst-wrap.quote",          "title": "#quote" },
+      { "command": "typst-wrap.userFunctions",  "title": "User Functions" }
+    ],
+    "menus": {
+      "typst-wrap.submenu": [
+        { "command": "typst-wrap.strong",         "group": "1_text@1" },
+        { "command": "typst-wrap.emph",           "group": "1_text@2" },
+        { "command": "typst-wrap.lower",          "group": "1_text@3" },
+        { "command": "typst-wrap.upper",          "group": "1_text@4" },
+        { "command": "typst-wrap.raw",            "group": "1_text@5" },
+        { "command": "typst-wrap.highlight",      "group": "2_decor@1" },
+        { "command": "typst-wrap.underline",      "group": "2_decor@2" },
+        { "command": "typst-wrap.strike",         "group": "2_decor@3" },
+        { "command": "typst-wrap.overline",       "group": "2_decor@4" },
+        { "command": "typst-wrap.sub",            "group": "3_script@1" },
+        { "command": "typst-wrap.super",          "group": "3_script@2" },
+        { "command": "typst-wrap.smallcaps",      "group": "3_script@3" },
+        { "command": "typst-wrap.textRed",        "group": "4_color@1" },
+        { "command": "typst-wrap.textBlue",       "group": "4_color@2" },
+        { "command": "typst-wrap.alignCenter",    "group": "5_align@1" },
+        { "command": "typst-wrap.alignLeft",      "group": "5_align@2" },
+        { "command": "typst-wrap.alignRight",     "group": "5_align@3" },
+        { "command": "typst-wrap.box",            "group": "6_layout@1" },
+        { "command": "typst-wrap.block",          "group": "6_layout@2" },
+        { "command": "typst-wrap.rect",           "group": "6_layout@3" },
+        { "command": "typst-wrap.rectDashed",     "group": "6_layout@4" },
+        { "command": "typst-wrap.pad",            "group": "6_layout@5" },
+        { "command": "typst-wrap.columns",        "group": "6_layout@6" },
+        { "command": "typst-wrap.link",           "group": "7_doc@1" },
+        { "command": "typst-wrap.footnote",       "group": "7_doc@2" },
+        { "command": "typst-wrap.quote",          "group": "7_doc@3" },
+        { "command": "typst-wrap.userFunctions",  "group": "zz_funcs" }
+      ],
+      "editor/context": [
+        {
+          "submenu": "typst-wrap.submenu",
+          "when": "editorHasSelection && editorLangId == typst",
+          "group": "1_typst"
+        }
+      ]
+    }
+  }
+}
