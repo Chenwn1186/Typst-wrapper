@@ -4,6 +4,7 @@
   "description": "Wrap selected Typst code with common functions and user-defined functions via right-click menu",
   "version": "1.0.0",
   "publisher": "your-publisher",
+  "repository": "https://github.com/Chenwn1186/Typst-wrapper",
   "engines": {
     "vscode": "^1.85.0"
   },
