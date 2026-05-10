@@ -33,14 +33,14 @@ function activate(context) {
 
 	for (const w of presetWraps) {
 		context.subscriptions.push(
-			vscode.commands.registerCommand(`typst-wrap.${w.id}`, () => {
+			vscode.commands.registerCommand(`typst-wrapper.${w.id}`, () => {
 				wrapSelection(w.template);
 			})
 		);
 	}
 
 	context.subscriptions.push(
-		vscode.commands.registerCommand('typst-wrap.userFunctions', () => {
+		vscode.commands.registerCommand('typst-wrapper.userFunctions', () => {
 			const editor = vscode.window.activeTextEditor;
 			if (!editor) { return; }
 
