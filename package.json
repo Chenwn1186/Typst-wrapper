@@ -1,5 +1,5 @@
 {
-  "name": "typst-wrap",
+  "name": "typst-wrapper",
   "displayName": "Typst Wrapper",
   "description": "Wrap selected Typst code with common functions and user-defined functions via right-click menu",
   "version": "1.0.0",
